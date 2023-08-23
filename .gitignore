@@ -1,0 +1,44 @@
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+
+# Generated files
+Makefile
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+CMakeLists.txt.user
+CTestTestfile.cmake
+
+# Qt-specific files
+*.moc
+*.moc.cpp
+*.qrc
+*.rcc
+*.ui
+*.qss
+
+# Generated UI files
+ui_*.h
+
+# Generated moc files
+moc_*.cpp
+
+# CMake build directory
+build/
+
+# Ignore system-specific build files
+*.DS_Store
+Thumbs.db
