@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QPrinter>
+#include <QPrintDialog>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -23,6 +25,27 @@ private slots:
 
     void save();
     void saveAs();
+
+    void print();
+    void printPreview(QPrinter *printer);
+    void printPreviewDialog();
+    void exportPdf();
+
+    void undo();
+    void redo();
+
+    void cut();
+    void copy();
+    void paste();
+
+    void fontBold();
+    void fontItalic();
+    void fontUnderLine();
+
+    void right();
+    void left();
+    void center();
+    void justify();
 
 private:
     Ui::MainWindow *ui;
