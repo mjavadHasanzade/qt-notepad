@@ -3,6 +3,8 @@
 #include <QFileDialog>
 #include <QMessageBox>
 #include <QPrintPreviewDialog>
+#include <QFontDialog>
+#include <QColorDialog>
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -37,6 +39,14 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->actionLeft, &QAction::triggered, this, &MainWindow::left);
     connect(ui->actioncenter, &QAction::triggered, this, &MainWindow::center);
     connect(ui->actionJustify, &QAction::triggered, this, &MainWindow::justify);
+
+    //font clor
+    connect(ui->actionFont, &QAction::triggered, this, &MainWindow::changeFont);
+    connect(ui->actionColor, &QAction::triggered, this, &MainWindow::changeColor);
+    connect(ui->actionAbout, &QAction::triggered, this, &MainWindow::about);
+
+
+    connect(ui->actionAbout, &QAction::triggered, this, &MainWindow::about);
 
 }
 
@@ -233,4 +243,26 @@ void MainWindow::justify()
     ui->textEdit->setAlignment(Qt::AlignmentFlag::AlignJustify);
 
 }
+
+MainWindow::changeFont()
+{
+    bool ok;
+    QFont font=QFontDialog::getFont(&ok,this);
+    if(ok){
+        ui->textEdit->setFont(font);
+    }
+}
+
+
+MainWindow::changeColor(){
+//    QColorDialog colorDialog;
+    QColor color=QColorDialog::getColor();
+    ui->textEdit->setTextColor(color);
+}
+
+MainWindow::about(){
+    QMessageBox::about(this,"About Application","This APP is made by Qt6, C++");
+}
+
+
 

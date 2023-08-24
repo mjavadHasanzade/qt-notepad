@@ -47,6 +47,10 @@ private slots:
     void center();
     void justify();
 
+    changeFont();
+    changeColor();
+    about();
+
 private:
     Ui::MainWindow *ui;
 };
